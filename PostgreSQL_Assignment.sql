@@ -70,3 +70,5 @@ set status = 'Awarded'
 where (frontend_mark+backend_mark) = ( select max(frontend_mark+backend_mark) from students); 
 
 
+-- Query (4).Retrieve the names of students using a limit of 2, starting from the 3rd student..:
+select student_name from students limit 2 offset 2;
