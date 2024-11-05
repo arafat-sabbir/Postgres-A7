@@ -1,5 +1,5 @@
 1. What is PostgreSQL?
-   PostgreSQL is a powerful, open-source database system. It’s known for handling complex data workloads efficiently and supports both SQL and NoSQL data operations. It’s also ACID-compliant, meaning it ensures data integrity with Atomicity, Consistency, Isolation, and Durability.
+   PostgreSQL is a powerful, open-source database system. It is known for handling complex data workloads efficiently and supports both SQL and NoSQL data operations. It’s also ACID-compliant, meaning it ensures data integrity with Atomicity, Consistency, Isolation, and Durability.
 
 2. What’s the Purpose of a Database Schema in PostgreSQL?
    A database schema organizes and groups tables, views, indexes, etc., within a database. Think of it as a folder structure that keeps things organized, prevents name conflicts, and manages data access for different users or applications.
@@ -15,17 +15,13 @@
 5. Using the WHERE Clause in SELECT
    The WHERE clause filters rows that meet certain conditions. It’s used in SQL to only get back data that matches what you need.
 
-sql
-Copy code
-SELECT \* FROM students WHERE age > 18;
-
 6. LIMIT and OFFSET Clauses
    These are super handy for pagination:
 
 LIMIT: Sets the max number of rows to return.
 OFFSET: Skips a specified number of rows before starting to return rows.
 sql
-Copy code
+
 SELECT \* FROM students LIMIT 10 OFFSET 20;
 This retrieves 10 rows, but only after skipping the first 20.
 
@@ -33,7 +29,6 @@ This retrieves 10 rows, but only after skipping the first 20.
    The UPDATE statement changes existing records in a table. You can set specific columns to new values based on a condition.
 
 sql
-Copy code
 UPDATE students
 SET age = 20
 WHERE student_id = 1;
@@ -47,14 +42,12 @@ LEFT JOIN: Returns all rows from the left table and matches from the right.
 RIGHT JOIN: Returns all rows from the right table and matches from the left.
 FULL JOIN: Returns all rows where there’s a match in either table.
 sql
-Copy code
 SELECT students.name, enrollments.course_id
 FROM students
 INNER JOIN enrollments ON students.student_id = enrollments.student_id; 9. GROUP BY and Aggregation
 The GROUP BY clause groups rows with the same values in specified columns. It’s essential for aggregation operations, letting you calculate totals, averages, and other stats per group.
 
 sql
-Copy code
 SELECT course_id, COUNT(student_id) AS student_count
 FROM enrollments
 GROUP BY course_id; 10. Aggregate Functions
@@ -64,7 +57,6 @@ COUNT(): Counts rows or specific non-null values.
 SUM(): Adds up numeric values.
 AVG(): Calculates the average of numeric values.
 sql
-Copy code
 SELECT COUNT(student_id) AS total_students,
 SUM(age) AS total_age,
 AVG(age) AS average_age
